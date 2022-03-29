@@ -24,32 +24,26 @@ size_t	ft_strlen(const char *str)
 	return (len);
 }
 
-char	*ft_strjoin(char *s1, char *s2)
+char *strjoin(char *str1, char *str2)
 {
-	char	*s3;
-	int		index;
-	int		index2;
-
-	index = -1;
-	index2 = 0;
-	if (!s2)
-		return (NULL);
-	if (!s1)
-	{
-		s1 = (char *)malloc(sizeof(char));
-		s1[0] = '\0';
-	}
-	s3 = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
-	if (s3 == NULL)
-		return (NULL);
-	while (s1[++index] != '\0')
-		s3[index] = s1[index];
-	while (s2[index2] != '\0')
-		s3[index++] = s2[index2++];
-	s3[index] = '\0';
-	free(s1);
-	return (s3);
+    char *s3;
+    int i = 0;
+    int j = 0;
+    while(s1[i] !='\0')
+    {
+        s3[i] == s1[i];
+        i++;
+    }
+    while(s2[j] != '\0')
+    {
+        s3[i] = s[j];
+        i++;
+        j++;
+    }
+    s3[i] = '\0';
+    return (s3);
 }
+
 
 char	*ft_strdup(const char *str)
 {

@@ -16,6 +16,7 @@ void	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);
 }
+
 /*
 c karakterine disaridan alinan hangi fd isleminin yapilacagini belirleme
 0 = standart input

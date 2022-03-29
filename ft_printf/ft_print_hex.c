@@ -6,20 +6,20 @@
 /*   By: cyalniz <cyalniz@student.42kocaeli.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 11:19:00 by cyalniz           #+#    #+#             */
-/*   Updated: 2022/03/08 09:24:50 by cyalniz          ###   ########.fr       */
+/*   Updated: 2022/03/28 16:53:54 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-int	ft_number_count_hex(unsigned int nmbr, int base)
+// int adres x
+int	ft_number_count_hex(unsigned int nmbr)
 {
 	int	len;
 
 	len = 0;
 	while (nmbr != 0)
 	{
-		nmbr = nmbr / base;
+		nmbr = nmbr / 16;
 		len++;
 	}
 	return (len);

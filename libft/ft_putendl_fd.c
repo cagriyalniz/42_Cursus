@@ -20,6 +20,7 @@ void	ft_putendl_fd(char *s, int fd)
 		ft_putchar_fd('\n', fd);
 	}
 }
+
 /*
 disaridan alinan *s nin elemanlarını sirayla yazdirma(fd'leme) islemi
 ve sonuna \n ekleme

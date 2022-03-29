@@ -6,7 +6,7 @@
 /*   By: cyalniz <cyalniz@student.42kocaeli.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 09:35:14 by cyalniz           #+#    #+#             */
-/*   Updated: 2022/03/08 10:43:41 by cyalniz          ###   ########.fr       */
+/*   Updated: 2022/03/14 15:07:43 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	ft_formats(va_list args, const char format)
 	return (len);
 }
 
-int	ft_printf(const char *str, ...)
+int	ft_printf(const char *str,  ...)
 {
 	va_list	args;
 	int		index;
@@ -56,4 +56,17 @@ int	ft_printf(const char *str, ...)
 	}
 	va_end(args);
 	return (len);
+}
+
+int	main(){
+	
+	int x = 5;
+	char y = 'a';
+	char *z = "cagri";
+	int f = 123123123;
+
+	ft_printf("f: %x" ,f);
+	//ft_printf("\n%d", ft_printf("x: %d,   y: %c,   z: %s, adres: %p" ,x, y, z, &x));
+	//printf("%d", printf("cagri"));
+	
 }

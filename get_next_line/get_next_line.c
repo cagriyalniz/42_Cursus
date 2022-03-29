@@ -116,3 +116,11 @@ char	*get_next_line(int fd)
 	left_str = ft_new_left_str(left_str);
 	return (line);
 }
+
+int main()
+{
+    int fd;
+    fd = open("deneme", O_RDNOLY);
+    
+    write(3,  ,1);
+}
