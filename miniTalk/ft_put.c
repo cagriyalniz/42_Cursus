@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_put.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eozmert <eozmert@student.42.fr>            +#+  +:+       +#+        */
+/*   By: cyalniz <cyalniz@student.42kocaeli.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/24 12:12:37 by eozmert           #+#    #+#             */
-/*   Updated: 2022/03/24 12:12:58 by eozmert          ###   ########.fr       */
+/*   Created: 2022/03/30 09:20:47 by cyalniz           #+#    #+#             */
+/*   Updated: 2022/03/30 09:20:50 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "header.h"
 

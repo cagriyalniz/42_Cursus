@@ -5,10 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cyalniz <cyalniz@student.42kocaeli.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/24 12:12:21 by eozmert           #+#    #+#             */
-/*   Updated: 2022/03/29 12:49:15 by cyalniz          ###   ########.fr       */
+/*   Created: 2022/03/30 09:21:10 by cyalniz           #+#    #+#             */
+/*   Updated: 2022/03/30 09:21:12 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+
 
 #include "header.h"
 
@@ -72,7 +74,7 @@ struct  sigaction {
 	int	p_id;
 
 	p_id = getpid();
-	bzero(&act, sizeof(act));
+	ft_bzero(&act, sizeof(act));
 	act.sa_flags = SA_SIGINFO;
 	//SA_SIGINFO bayrağı
 	//sa_sigaction alanına atanan signal 

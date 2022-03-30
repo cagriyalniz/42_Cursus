@@ -5,10 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cyalniz <cyalniz@student.42kocaeli.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/24 12:12:48 by eozmert           #+#    #+#             */
-/*   Updated: 2022/03/29 11:08:35 by cyalniz          ###   ########.fr       */
+/*   Created: 2022/03/30 09:21:18 by cyalniz           #+#    #+#             */
+/*   Updated: 2022/03/30 09:21:19 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+
 
 #include "header.h"
 
@@ -63,4 +65,23 @@ int	ft_atoi(const char *str)
 		i++;
 	}
 	return (result * sign);
+}
+
+void	*ft_memset(void *dest, int ch, size_t count)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < count)
+	{
+		*(unsigned char *)(dest + i) = (unsigned char)ch;
+		i++;
+	}
+
+	return (dest);
+}
+
+void	ft_bzero(void *ch, size_t n)
+{
+	ft_memset(ch, '\0', n);
 }

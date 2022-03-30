@@ -5,10 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cyalniz <cyalniz@student.42kocaeli.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/24 12:12:43 by eozmert           #+#    #+#             */
-/*   Updated: 2022/03/29 11:09:50 by cyalniz          ###   ########.fr       */
+/*   Created: 2022/03/30 09:20:56 by cyalniz           #+#    #+#             */
+/*   Updated: 2022/03/30 09:20:59 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+
 
 #ifndef HEADER_H
 # define HEADER_H
@@ -39,6 +41,8 @@ void	idx_end(int *numbers, int *i, siginfo_t *siginfo);
 int		ft_iterative_power(int nb, int power);
 int		ft_atoi(const char *str);
 size_t	ft_strlen(char *str);
+void	ft_bzero(void *ch, size_t n);
+void	*ft_memset(void *dest, int ch, size_t count);
 
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
