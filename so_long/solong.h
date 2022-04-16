@@ -25,6 +25,7 @@ typedef	struct s_image
 	int				width;
 	int				height;
 	void			*img;
+	char			type;
 }	t_image;
 
 typedef	struct s_zone
@@ -33,22 +34,56 @@ typedef	struct s_zone
 	char	*path;
 }	t_zone;
 
+typedef struct s_map
+{
+	t_zone	zone;
+	t_image	image;
+	int		fd;
+
+}	t_map;
+
+typedef struct s_hero
+{
+	struct s_vars	vars;
+	int				x;
+	int				y;
+	char			*path;
+	int				width;
+	int				height;
+	void			*img;
+	char			type;
+} t_hero;
+
 typedef	struct game
 {
 	t_vars	vars;
-	t_image	image;
-	t_zone	zone;
+	t_map	map;
+	t_hero	hero;
 	int		game_over;
 	int		move_count;
+	int		key;// L= -1 R= +1 U= +2 D= -2
 	
 }	t_game;
 
 //key
 int		ft_key_hook(int keycode, t_game *game);
-void		ft_key_up(t_game *game);
-int	ft_key_esc(int	keycode, t_game *game);
+int		ft_key_esc(t_game *game);
+void	ft_key_up(t_game *game);
 void	ft_key_down(t_game *game);
+void	ft_key_left(t_game *game);
+void	ft_key_right(t_game *game);
 
 //map
 void	ft_map_create(t_game game);
+int		ft_get_map_size_x();
+int		ft_get_map_size_y();
+void	ft_put_map(t_game game, int fd, int i, int j, int x, int y);
+int		ft_get_map_coord(int fd);
+void	ft_put_image(int x, int y, t_image image, char type);
+t_zone	ft_put_zone(char type);
+int	ft_get_hero_cord_x();
+int	ft_get_hero_cord_y();
+//move
+void	ft_move_hero(t_game game);
+
 #endif
