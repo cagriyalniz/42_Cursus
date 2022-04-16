@@ -2,7 +2,7 @@
 
 t_zone	ft_put_zone(char type)
 {
-	t_zone map[6];
+	t_zone map[7];
 	int		i;
 
 	i = 0;
@@ -12,7 +12,8 @@ t_zone	ft_put_zone(char type)
 	map[3] = (t_zone){'E', "./image/fire.xpm"};
 	map[4] = (t_zone){'P', "./image/cat.xpm"};
 	map[5] = (t_zone){' ', "./image/error.xpm"};
-	while (i < 5)
+	map[6] = (t_zone){'B', "./image/black.xpm"};
+	while (i < 7)
 	{
 		if (map[i].name == type)
 		{

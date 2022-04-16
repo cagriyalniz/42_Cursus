@@ -7,6 +7,8 @@ void	ft_key_up(t_game *game)
 	image.vars = game->vars;
 	game->move_count += 1;
 	game->hero.y -= 48;
+	ft_put_image(game->hero.x, game->hero.y + 48, image, 'B');
+	ft_put_image(game->hero.x, game->hero.y + 48, image, '0');
 	ft_put_image(game->hero.x, game->hero.y, image, 'P');
 	
 }
@@ -18,6 +20,8 @@ void	ft_key_down(t_game *game)
 	image.vars = game->vars;
 	game->move_count += 1;
 	game->hero.y += 48;
+	ft_put_image(game->hero.x, game->hero.y - 48, image, 'B');
+	ft_put_image(game->hero.x, game->hero.y - 48, image, '0');
 	ft_put_image(game->hero.x, game->hero.y, image, 'P');
 }
 
@@ -28,7 +32,14 @@ void	ft_key_right(t_game *game)
 	image.vars = game->vars;
 	game->move_count += 1;
 	game->hero.x += 48;
+	if(game->hero.type != '1')
+	{
+	ft_put_image(game->hero.x - 48, game->hero.y, image, 'B');
+	ft_put_image(game->hero.x - 48, game->hero.y, image, '0');
 	ft_put_image(game->hero.x, game->hero.y, image, 'P');
+	}
+	
+	
 }
 
 void	ft_key_left(t_game *game)
@@ -38,6 +49,8 @@ void	ft_key_left(t_game *game)
 	image.vars = game->vars;
 	game->move_count += 1;
 	game->hero.x -= 48;
+	ft_put_image(game->hero.x + 48, game->hero.y, image, 'B');
+	ft_put_image(game->hero.x + 48, game->hero.y, image, '0');
 	ft_put_image(game->hero.x, game->hero.y, image, 'P');
 }
 
@@ -51,6 +64,8 @@ int	ft_key_esc(t_game *game)
 		printf("key: %d \n", game->key);
 		printf("x cor: %d \n", game->hero.x);
 		printf("y cor: %d \n", game->hero.y);
+		
+		printf("type: %c", game->hero.type);
 		mlx_destroy_window(game->vars.mlx, game->vars.win);
 		exit(0);
 	
