@@ -8,9 +8,14 @@
 #include <string.h>
 #include "minilibx/mlx.h"
 
-#ifndef	IMG_SIZE
-#define IMG_SIZE 48
+#ifndef	IMG_SIZE_Y
+#define IMG_SIZE_Y 48
 #endif
+
+#ifndef	IMG_SIZE_X
+#define IMG_SIZE_X 48
+#endif
+
 typedef	struct s_vars{
 	void	*mlx;
 	void	*win;
@@ -26,19 +31,21 @@ typedef	struct s_image
 	int				height;
 	void			*img;
 	char			type;
+	
 }	t_image;
 
 typedef	struct s_zone
 {
 	char	name;
 	char	*path;
+	//char	**matris;
 }	t_zone;
 
 typedef struct s_map
 {
 	t_zone	zone;
 	t_image	image;
-	int		fd;
+
 
 }	t_map;
 
@@ -52,6 +59,7 @@ typedef struct s_hero
 	int				height;
 	void			*img;
 	char			type;
+	char 			next_type;
 } t_hero;
 
 typedef	struct game
@@ -61,6 +69,7 @@ typedef	struct game
 	t_hero	hero;
 	int		game_over;
 	int		move_count;
+	char	**matris;
 	int		key;// L= -1 R= +1 U= +2 D= -2
 	
 }	t_game;
@@ -83,6 +92,13 @@ void	ft_put_image(int x, int y, t_image image, char type);
 t_zone	ft_put_zone(char type);
 int	ft_get_hero_cord_x();
 int	ft_get_hero_cord_y();
+void ft_matrix_create(t_game *game);
+char *get_next_line(int fd);
+void *myfree(void *str);
+
+//deneme
+//char	ft_find_next_type(int x, int y, t_image image);
+
 //move
 void	ft_move_hero(t_game game);
 
