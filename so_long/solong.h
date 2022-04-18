@@ -70,7 +70,10 @@ typedef	struct game
 	int		game_over;
 	int		move_count;
 	char	**matris;
+	int 	nx;
+	int		ny;
 	int		key;// L= -1 R= +1 U= +2 D= -2
+	int 	kontrol;
 	
 }	t_game;
 

@@ -16,12 +16,13 @@ int main(void)
 	game.hero.type = 'P';
 	//game.matris[ft_get_map_size_x() - 1][ft_get_map_size_y() - 1];
 	// = (char**)malloc(sizeof(char*)*9999);
-
+	
 	ft_matrix_create(&game);
 	//ft_matrix(&game);
 	game.hero.x = ft_get_hero_cord_x()*48;
 	game.hero.y = ft_get_hero_cord_y()*48;
-	
+	game.nx = game.hero.x/48;
+	game.ny = game.hero.y/48;
 
 
 	ft_map_create(game);
