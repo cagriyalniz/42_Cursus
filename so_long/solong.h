@@ -74,6 +74,9 @@ typedef	struct game
 	int		ny;
 	int		key;// L= -1 R= +1 U= +2 D= -2
 	int 	kontrol;
+	int		map_sizex;
+	int		map_sizey;
+	int		coin_count;
 	
 }	t_game;
 
@@ -98,6 +101,9 @@ int	ft_get_hero_cord_y();
 void ft_matrix_create(t_game *game);
 char *get_next_line(int fd);
 void *myfree(void *str);
+int	ft_find_coin(void);
+void	ft_image_change(t_game *game, t_image image, int x, int y);
+void	ft_collect_coin(t_game *game, int y, int x);
 
 //deneme
 //char	ft_find_next_type(int x, int y, t_image image);

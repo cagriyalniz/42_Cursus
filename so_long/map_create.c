@@ -67,7 +67,7 @@ void	ft_put_map(t_game game, int fd, int i, int j, int x, int y)
 	while (j > 0)
 	{
 		x = 0;
-		i = ft_get_map_size_x();
+		i = game.map_sizex;
 		while (i > 0)
 		{
 			c = ft_get_map_coord(fd);
@@ -97,8 +97,8 @@ void	ft_map_create(t_game game)
 	x = 0;
 	y = 0;
 	fd = open("map", O_RDONLY);
-	i = ft_get_map_size_x();
-	j = ft_get_map_size_y();
+	i = game.map_sizex;
+	j = game.map_sizey;
 	ft_put_map(game, fd, i, j, x, y);
 	close(fd);
 }

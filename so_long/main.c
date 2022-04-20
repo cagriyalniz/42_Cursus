@@ -9,7 +9,7 @@ int main(void)
 	//game = (t_game *)malloc(sizeof(t_game));
 	//game = malloc(sizeof(t_game));
 	game.vars.mlx = mlx_init();
-	game.vars.win = mlx_new_window(game.vars.mlx, 7200, 3600, "!!CAGRİ!!");
+	game.vars.win = mlx_new_window(game.vars.mlx, 1920, 1080, "!!SO_LONG!!");
 	mlx_key_hook(game.vars.win, ft_key_hook, &game);
 	game.move_count = 0;
 	game.game_over = 1;
@@ -17,13 +17,17 @@ int main(void)
 	//game.matris[ft_get_map_size_x() - 1][ft_get_map_size_y() - 1];
 	// = (char**)malloc(sizeof(char*)*9999);
 	
-	ft_matrix_create(&game);
 	//ft_matrix(&game);
+	game.map_sizex = ft_get_map_size_x();
+	game.map_sizey = ft_get_map_size_y();
+	game.coin_count = ft_find_coin();
 	game.hero.x = ft_get_hero_cord_x()*48;
 	game.hero.y = ft_get_hero_cord_y()*48;
-	game.nx = game.hero.x/48;
-	game.ny = game.hero.y/48;
 
+	game.nx = ft_get_hero_cord_x();
+	game.ny = ft_get_hero_cord_y();
+
+	ft_matrix_create(&game);
 
 	ft_map_create(game);
 	

@@ -54,3 +54,20 @@ void	ft_move_hero(t_game game)
 	ft_put_image(game.hero.x, game.hero.y, image, 'P');
 
 }
+
+int	ft_find_coin(void)
+{
+	int fd = open("map",O_RDONLY);
+	int count = 0;
+	int buff = 1;
+	char	x = 'x';
+	while (buff == 1 && x != '\0')
+	{
+		buff = read(fd, &x, 1);
+		if (x == 'C')
+			count++;
+	}
+	
+	return (count);
+	close (fd);
+}

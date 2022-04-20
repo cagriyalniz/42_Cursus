@@ -17,7 +17,7 @@ AR			=	ar rcs
 
 FTPRINT		=	main.c
 
-FTSTR		=	put_image.c put_map.c rgb.c all_hook.c
+FTSTR		=	put_image.c put_map.c rgb.c all_hook.c key.c
 
 #FileCreate
 
