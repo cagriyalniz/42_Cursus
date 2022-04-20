@@ -32,37 +32,15 @@ void	ft_put_image(int x, int y, t_image image, char type)
 	image.path = ft_put_zone(type).path;
 	image.img = mlx_xpm_file_to_image(image.vars.mlx, image.path, &image.width, &image.height);
 	mlx_put_image_to_window(image.vars.mlx, image.vars.win, image.img, image.x, image.y);
-	//game->matris[x/48][y/48] = type;
-	
-
 }
 
 
 void	ft_image_change(t_game *game, t_image image, int x, int y)
 {
-	//up
 	ft_put_image(game->hero.x + x, game->hero.y + y, image, 'B');
 	ft_put_image(game->hero.x + x, game->hero.y + y, image, '0');
 	ft_put_image(game->hero.x, game->hero.y, image, 'B');
 	ft_put_image(game->hero.x, game->hero.y, image, 'P');
-	
-/* 	//down
-	ft_put_image(game->hero.x, game->hero.y - 48, image, 'B');
-	ft_put_image(game->hero.x, game->hero.y - 48, image, '0');
-	ft_put_image(game->hero.x, game->hero.y, image, 'B');
-	ft_put_image(game->hero.x, game->hero.y, image, 'P');
-
-	//right
-	ft_put_image(game->hero.x - 48, game->hero.y, image, 'B');
-	ft_put_image(game->hero.x - 48, game->hero.y, image, '0');
-	ft_put_image(game->hero.x, game->hero.y, image, 'B');
-	ft_put_image(game->hero.x, game->hero.y, image, 'P');
-
-	//left
-	ft_put_image(game->hero.x + 48, game->hero.y, image, 'B');
-	ft_put_image(game->hero.x + 48, game->hero.y, image, '0');
-	ft_put_image(game->hero.x, game->hero.y, image, 'B');
-	ft_put_image(game->hero.x, game->hero.y, image, 'P'); */
 }
 
 void	ft_collect_coin(t_game *game, int y, int x)

@@ -44,17 +44,6 @@ int	ft_get_hero_cord_y()
 	return syc;
 }
 
-void	ft_move_hero(t_game game)
-{
-	t_image image;
-	
-	
-	image.vars = game.vars;
-
-	ft_put_image(game.hero.x, game.hero.y, image, 'P');
-
-}
-
 int	ft_find_coin(void)
 {
 	int fd = open("map",O_RDONLY);

@@ -8,6 +8,16 @@
 #include <string.h>
 #include "minilibx/mlx.h"
 
+enum {
+	ON_KEYDOWN = 2,
+	ON_KEYUP = 3,
+	ON_MOUSEDOWN = 4,
+	ON_MOUSEUP = 5,
+	ON_MOUSEMOVE = 6,
+	ON_EXPOSE = 12,
+	ON_DESTROY = 17
+};
+
 #ifndef	IMG_SIZE_Y
 #define IMG_SIZE_Y 48
 #endif
@@ -107,8 +117,5 @@ void	ft_collect_coin(t_game *game, int y, int x);
 
 //deneme
 //char	ft_find_next_type(int x, int y, t_image image);
-
-//move
-void	ft_move_hero(t_game game);
 
 #endif
