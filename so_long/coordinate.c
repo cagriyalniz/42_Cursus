@@ -1,6 +1,6 @@
 #include "solong.h"
 
-int	ft_get_hero_cord_x()
+int	ft_get_hero_cord_x(char *file)
 {
 	int		byt;
 	char	l;
@@ -8,7 +8,7 @@ int	ft_get_hero_cord_x()
 	int		fd;
 	syc = 0;
 	byt = 1;
-	fd = open("map", O_RDONLY);
+	fd = open(file, O_RDONLY);
 	while (byt != 0)
 	{
 		byt = read(fd, &l, 1);
@@ -22,7 +22,7 @@ int	ft_get_hero_cord_x()
 	return syc;
 }
 
-int	ft_get_hero_cord_y()
+int	ft_get_hero_cord_y(char *file)
 {
 	int		byt;
 	char	l;
@@ -31,7 +31,7 @@ int	ft_get_hero_cord_y()
 
 	syc = 0;
 	byt = 1;
-	fd = open("map", O_RDONLY);
+	fd = open(file, O_RDONLY);
 	while (byt != 0)
 	{
 		byt = read(fd, &l, 1);
@@ -44,9 +44,9 @@ int	ft_get_hero_cord_y()
 	return syc;
 }
 
-int	ft_find_coin(void)
+int	ft_find_coin(char *file)
 {
-	int fd = open("map",O_RDONLY);
+	int fd = open(file,O_RDONLY);
 	int count = 0;
 	int buff = 1;
 	char	x = 'x';

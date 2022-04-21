@@ -1,13 +1,13 @@
 #include "solong.h"
 
-void ft_matrix_create(t_game *game)
+void ft_matrix_create(t_game *game, char *file)
 {
 	int 	i;
 	int		j;
 	int		fd;
 	char 	*area;
 
-	fd = open("map", O_RDONLY);
+	fd = open(file, O_RDONLY);
 	game->matris = (char **)malloc(sizeof(char *) * 9999);
 	i = 0;
 	j = 0;
@@ -27,4 +27,20 @@ void ft_matrix_create(t_game *game)
 		i++;
 	}
 	close(fd);
+}
+
+int	ft_get_mp_size_x(t_game *game)
+{
+
+	int	j;
+	int	syc;
+	
+	j = 0;
+	syc = 0;
+	while(game->matris[j][0] != '\0')
+	{
+		j++;
+		syc++;
+	}
+	return syc;
 }

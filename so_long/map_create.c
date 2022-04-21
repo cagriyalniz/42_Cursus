@@ -1,14 +1,15 @@
 #include "solong.h"
 
-int	ft_get_map_size_x()
+int	ft_get_map_size_x(char *file)
 {
 	int		byt;
 	char	l;
 	int		syc;
 	int		fd;
+
 	syc = 0;
 	byt = 1;
-	fd = open("map", O_RDONLY);
+	fd = open(file, O_RDONLY);
 	while (byt != 0)
 	{
 		byt = read(fd, &l, 1);
@@ -20,7 +21,7 @@ int	ft_get_map_size_x()
 	return syc;
 }
 
-int	ft_get_map_size_y()
+int	ft_get_map_size_y(char *file)
 {
 	int		byt;
 	char	l;
@@ -29,7 +30,7 @@ int	ft_get_map_size_y()
 
 	syc = 0;
 	byt = 1;
-	fd = open("map", O_RDONLY);
+	fd = open(file, O_RDONLY);
 	while (byt != 0)
 	{
 		byt = read(fd, &l, 1);
@@ -86,7 +87,7 @@ void	ft_put_map(t_game game, int fd, int i, int j, int x, int y)
 	close(fd);
 }
 
-void	ft_map_create(t_game game)
+void	ft_map_create(t_game game, char *file)
 {
 	int		i;
 	int		j;
@@ -96,7 +97,7 @@ void	ft_map_create(t_game game)
 
 	x = 0;
 	y = 0;
-	fd = open("map", O_RDONLY);
+	fd = open(file, O_RDONLY);
 	i = game.map_sizex;
 	j = game.map_sizey;
 	ft_put_map(game, fd, i, j, x, y);
