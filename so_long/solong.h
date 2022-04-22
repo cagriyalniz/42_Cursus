@@ -87,7 +87,9 @@ typedef	struct game
 	int		map_sizex;
 	int		map_sizey;
 	int		coin_count;
-	
+	char	*error;
+
+
 }	t_game;
 
 //key
@@ -115,8 +117,13 @@ void *myfree(void *str);
 int	ft_find_coin(char *file);
 void	ft_image_change(t_game *game, t_image image, int x, int y);
 void	ft_collect_coin(t_game *game, int y, int x);
+//void	ft_game_create(t_game *game, char **file);
 
-//deneme
-//char	ft_find_next_type(int x, int y, t_image image);
+//error
+int	ft_map_cntrl_elmn_sysi(t_game *game);
+int	ft_map_control(t_game *game);
+int	ft_map_cntrl_ust_alt(t_game *game);
+int	ft_map_cntrl_sag_sol(t_game *game);
+int	ft_map_cntrl_frkli_elemn(t_game *game);
 
 #endif

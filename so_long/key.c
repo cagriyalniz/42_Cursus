@@ -40,6 +40,7 @@ void	ft_key_down(t_game *game)
 /* 	if (game->matris[game->ny + 1][game->nx] == 'C')
 		game->coin_count--;
  */
+
 	if(game->matris[game->ny + 1][game->nx] != '1')
 	{
 		t_image image;
@@ -150,10 +151,11 @@ int	ft_key_esc(t_game *game)
 		printf("game.map.zone.name: %c\n", game->map.zone.name);
 		printf("\n nx %d \n", game->nx);
 		printf("\n getmapsizex: %d\n", game->map_sizex);
+		printf("\n getmapsizey: %d\n", game->map_sizey);
 	//	printf("next type: %c", ft_find_next_type(game->hero.x, game->hero.y, image))
 	printf("kontrol: %d\n", game->kontrol);
 		mlx_destroy_window(game->vars.mlx, game->vars.win);
-		int i =0, j = 0;
+	 	int i =0, j = 0;
 		while(i <= 10)
 		{
 			j = 0;
@@ -164,7 +166,7 @@ int	ft_key_esc(t_game *game)
 			}
 			printf("\n");
 			i++;
-		}
+		} 
 		
 	free(game->matris);
 	printf("nx: %d ny: %d", game->nx, game->ny);

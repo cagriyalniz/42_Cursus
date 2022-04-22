@@ -56,7 +56,6 @@ int	ft_find_coin(char *file)
 		if (x == 'C')
 			count++;
 	}
-	
-	return (count);
 	close (fd);
+	return (count);
 }
