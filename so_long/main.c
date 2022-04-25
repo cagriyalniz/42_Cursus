@@ -6,7 +6,7 @@
 /*   By: cyalniz <cyalniz@student.42kocaeli.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 10:10:52 by cyalniz           #+#    #+#             */
-/*   Updated: 2022/04/25 10:10:57 by cyalniz          ###   ########.fr       */
+/*   Updated: 2022/04/25 11:28:11 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,5 +61,5 @@ int	main(int ac, char *file[])
 		game.move_count = 0;
 		mlx_loop(game.vars.mlx);
 	}
-	printf("error type:%s", game.error);
+	printf("Error\n%s", game.error);
 }

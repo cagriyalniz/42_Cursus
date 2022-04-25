@@ -6,7 +6,7 @@
 /*   By: cyalniz <cyalniz@student.42kocaeli.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 10:11:16 by cyalniz           #+#    #+#             */
-/*   Updated: 2022/04/25 10:17:09 by cyalniz          ###   ########.fr       */
+/*   Updated: 2022/04/25 11:30:03 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,12 +48,12 @@ int	ft_map_cntrl_ust_alt(t_game *game)
 	{
 		if (game->matris[0][i] != '1')
 		{
-			game->error = "ERROR (UP)";
+			game->error = "MAP: (UP)";
 			return (0);
 		}
 		if (game->matris[game->map_sizey - 2][i] != '1')
 		{
-			game->error = "ERROR (DOWN)";
+			game->error = "MAP: (DOWN)";
 			return (0);
 		}
 	i++;
@@ -70,12 +70,12 @@ int	ft_map_cntrl_sag_sol(t_game *game)
 	{
 		if (game->matris[i][0] != '1')
 		{
-			game->error = "ERROR (LEFT)";
+			game->error = "MAP: (LEFT)";
 			return (0);
 		}
 		else if (game->matris[i][game->map_sizex - 1] != '1')
 		{
-			game->error = "ERROR (RIGHT)";
+			game->error = "MAP: (RIGHT)";
 			return (0);
 		}
 	i++;
@@ -89,7 +89,7 @@ int	ft_map_control(t_game *game)
 		return (0);
 	else if (ft_map_cntrl_elmn_sysi(game) == 0)
 	{
-		game->error = "ERROR (WRONG OBJECTS)";
+		game->error = "(WRONG OBJECTS)";
 		return (0);
 	}
 	else if (ft_map_cntrl_sag_sol(game) == 0)
