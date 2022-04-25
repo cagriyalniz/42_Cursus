@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   coordinate.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cyalniz <cyalniz@student.42kocaeli.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/25 10:09:32 by cyalniz           #+#    #+#             */
+/*   Updated: 2022/04/25 10:09:37 by cyalniz          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "solong.h"
 
 int	ft_get_hero_cord_x(char *file)
@@ -6,20 +18,21 @@ int	ft_get_hero_cord_x(char *file)
 	char	l;
 	int		syc;
 	int		fd;
+
 	syc = 0;
 	byt = 1;
 	fd = open(file, O_RDONLY);
 	while (byt != 0)
 	{
 		byt = read(fd, &l, 1);
-		if(l == 'P')
-			break;
+		if (l == 'P')
+			break ;
 		syc++;
 		if (l == '\n')
 			syc = 0;
 	}
-	close(fd);
-	return syc;
+	close (fd);
+	return (syc);
 }
 
 int	ft_get_hero_cord_y(char *file)
@@ -35,21 +48,26 @@ int	ft_get_hero_cord_y(char *file)
 	while (byt != 0)
 	{
 		byt = read(fd, &l, 1);
-		if(l == '\n')
+		if (l == '\n')
 			syc++;
 		if (l == 'P')
-			break;
+			break ;
 	}
-	close(fd);
-	return syc;
+	close (fd);
+	return (syc);
 }
 
 int	ft_find_coin(char *file)
 {
-	int fd = open(file,O_RDONLY);
-	int count = 0;
-	int buff = 1;
-	char	x = 'x';
+	int		fd;
+	int		count;
+	int		buff;
+	char	x;
+
+	fd = open(file, O_RDONLY);
+	count = 0;
+	buff = 1;
+	x = 'x';
 	while (buff == 1 && x != '\0')
 	{
 		buff = read(fd, &x, 1);

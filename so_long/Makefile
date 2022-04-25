@@ -1,7 +1,6 @@
 
 CC          =   gcc
 MINILIBX    =   minilibx/libmlx.a
-LIBFT		=	include/libft/libft.a
 LFLAGS      =   -framework OpenGL -framework AppKit -L./minilibx -lmlx
 CFLAGS      =   -I./minilibx
 NAME        =   so_long
@@ -17,7 +16,7 @@ AR			=	ar rcs
 
 FTPRINT		=	main.c
 
-FTSTR		=	put_image.c put_map.c rgb.c all_hook.c key.c
+FTSTR		=	coordinate.c get_next_line.c key.c map_control.c map_create.c map_to_matrix.c put_image.c utils.c
 
 #FileCreate
 

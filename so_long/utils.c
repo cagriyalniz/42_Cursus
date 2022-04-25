@@ -1,42 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map_to_matrix.c                                    :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cyalniz <cyalniz@student.42kocaeli.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/25 10:12:08 by cyalniz           #+#    #+#             */
-/*   Updated: 2022/04/25 10:12:10 by cyalniz          ###   ########.fr       */
+/*   Created: 2022/04/25 10:13:11 by cyalniz           #+#    #+#             */
+/*   Updated: 2022/04/25 10:13:12 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "solong.h"
 
-void	ft_matrix_create(t_game *game, char *file)
+char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 {
-	int		i;
-	int		j;
-	int		fd;
-	char	*area;
+	size_t	i;
+	size_t	j;
+	size_t	s2_len;
 
-	fd = open(file, O_RDONLY);
-	game->matris = (char **)malloc(sizeof(char *) * 8888);
 	i = 0;
-	j = 0;
-	while (i < game->map_sizey)
+	s2_len = ft_strlen(s2);
+	if (!s2_len)
+		return ((char *)s1);
+	if (n != 0)
 	{
-		j = 0;
-		area = get_next_line(fd);
-		game->matris[i] = (char *)malloc(sizeof(char *) * 8888);
-		if (area == NULL)
-			break ;
-		while (j < game->map_sizex)
+		while (s1[i] && i <= n - s2_len)
 		{
-			game->matris[i][j] = (char)area[j];
-			j++;
+			j = 0;
+			while (s2[j] && s2[j] == s1[i + j])
+				j++;
+			if (j == s2_len)
+				return ((char *)&s1[i]);
+			i++;
 		}
-		game->matris[i][j] = '\0';
+	}
+	return (NULL);
+}
+
+size_t	ft_strlen(const char *c)
+{
+	size_t	i;
+
+	i = 0;
+	while (c[i])
+	{
 		i++;
 	}
-	close (fd);
+	return (i);
 }

@@ -1,29 +1,39 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   map_control.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cyalniz <cyalniz@student.42kocaeli.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/25 10:11:16 by cyalniz           #+#    #+#             */
+/*   Updated: 2022/04/25 10:17:09 by cyalniz          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "solong.h"
 
 int	ft_map_cntrl_elmn_sysi(t_game *game)
 {
-	int pCount = 0;
-	int	eCount = 0;
-	int cCount = 0;
-	int i = 0;
-	int j = 0;
-
-	while(i < game->map_sizey)
+	game->mp_ct_i = 0;
+	game->pcount = 0;
+	game->ecount = 0;
+	game->ccount = 0;
+	while (game->mp_ct_i < game->map_sizey)
 	{
-		j = 0;
-		while(j < game->map_sizex)
+		game->mp_ct_j = 0;
+		while (game->mp_ct_j < game->map_sizex)
 		{
-			if (game->matris[i][j] == 'P')
-				pCount++;
-			else if (game->matris[i][j]  == 'C')
-				cCount++;
-			else if (game->matris[i][j]  == 'E')
-				eCount++;
-			j++;
+			if (game->matris[game->mp_ct_i][game->mp_ct_j] == 'P')
+				game->pcount++;
+			else if (game->matris[game->mp_ct_i][game->mp_ct_j] == 'C')
+				game->ccount++;
+			else if (game->matris[game->mp_ct_i][game->mp_ct_j] == 'E')
+				game->ecount++;
+			game->mp_ct_j++;
 		}
-		i++;
+		game->mp_ct_i++;
 	}
-	if(pCount == 1 && cCount > 0 && eCount > 0 )
+	if (game->pcount == 1 && game->ccount > 0 && game->ecount > 0)
 		return (1);
 	else
 		return (0);
@@ -31,84 +41,58 @@ int	ft_map_cntrl_elmn_sysi(t_game *game)
 
 int	ft_map_cntrl_ust_alt(t_game *game)
 {
-	int i = 0;
+	int	i;
 
-	while(i < game->map_sizex)
+	i = 0;
+	while (i < game->map_sizex)
 	{
-
-			if (game->matris[0][i] != '1')
-				{	
-					game->error = "haritanın üstü delik";
-					return (0);
-				}
-			if(game->matris[game->map_sizey - 2][i] != '1')
-				{
-					game->error = "haritanın altı delik";
-					return (0);
-				}
-			printf("%c%c\n",game->matris[0][i], game->matris[game->map_sizey - 2][i]);
-		i++;
+		if (game->matris[0][i] != '1')
+		{
+			game->error = "ERROR (UP)";
+			return (0);
+		}
+		if (game->matris[game->map_sizey - 2][i] != '1')
+		{
+			game->error = "ERROR (DOWN)";
+			return (0);
+		}
+	i++;
 	}
 	return (1);
 }
 
 int	ft_map_cntrl_sag_sol(t_game *game)
 {
-	int i = 0;
-	while(i < game->map_sizey - 1)
+	int	i;
+
+	i = 0;
+	while (i < game->map_sizey - 1)
 	{
-
-			if (game->matris[i][0] != '1')
-				{	
-					game->error = "haritanin sol duvarı delik";
-					return (0);
-				}
-			else if(game->matris[i][game->map_sizex - 1] != '1')
-				{
-					game->error = "haritanin sağ duvarı delik";
-					return (0);
-				}
-		i++;
-	}
-	return (1);
-}
-
-int	ft_map_cntrl_frkli_elemn(t_game *game)
-{
-	int i = 0;
-	int j = 0;
-
-	while(i < game->map_sizey)
-	{
-		j = 0;
-		while(j < game->map_sizex)
+		if (game->matris[i][0] != '1')
 		{
-			if (game->matris[i][j] != 'P' && game->matris[i][j] != '0'
-			&& game->matris[i][j] != 'E' && game->matris[i][j] != 'C'
-			&& game->matris[i][j] != '1')
-			{
-				game->error = "farkli eleman var";
-				return (0);
-			}
-			j++;
+			game->error = "ERROR (LEFT)";
+			return (0);
 		}
-		i++;
+		else if (game->matris[i][game->map_sizex - 1] != '1')
+		{
+			game->error = "ERROR (RIGHT)";
+			return (0);
+		}
+	i++;
 	}
 	return (1);
 }
 
 int	ft_map_control(t_game *game)
 {
- 	if (ft_map_cntrl_ust_alt(game) == 0)
-		return 0;
+	if (ft_map_cntrl_ust_alt(game) == 0)
+		return (0);
 	else if (ft_map_cntrl_elmn_sysi(game) == 0)
-		{
-			game->error = "eleman sayisi";
-			return 0;
-		}
+	{
+		game->error = "ERROR (WRONG OBJECTS)";
+		return (0);
+	}
 	else if (ft_map_cntrl_sag_sol(game) == 0)
-		return 0;
- //	else if (ft_map_cntrl_frkli_elemn(game) == 0)
-	//	return 0;
-	return 1;
+		return (0);
+	return (1);
 }
