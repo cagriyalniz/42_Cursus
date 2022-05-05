@@ -6,7 +6,7 @@
 /*   By: cyalniz <cyalniz@student.42kocaeli.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 10:11:16 by cyalniz           #+#    #+#             */
-/*   Updated: 2022/04/25 11:30:03 by cyalniz          ###   ########.fr       */
+/*   Updated: 2022/04/27 11:55:20 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int	ft_map_cntrl_ust_alt(t_game *game)
 	while (i < game->map_sizex)
 	{
 		if (game->matris[0][i] != '1')
-		{
+		{\
 			game->error = "MAP: (UP)";
 			return (0);
 		}
