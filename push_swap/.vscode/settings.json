@@ -1,0 +1,6 @@
+{
+	"files.associations": {
+		"header.h": "c",
+		"libft.h": "c"
+	}
+}
