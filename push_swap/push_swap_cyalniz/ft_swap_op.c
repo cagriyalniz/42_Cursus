@@ -6,7 +6,7 @@
 /*   By: cyalniz <cyalniz@student.42kocaeli.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 16:20:48 by cyalniz           #+#    #+#             */
-/*   Updated: 2022/06/20 16:46:19 by cyalniz          ###   ########.fr       */
+/*   Updated: 2022/06/21 11:22:35 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,10 @@ void	ft_swapB(t_struct **stackB)
 		*stackB = head;
 	}
 	write(1, "sb\n", 3);
+}
+
+void	ft_swapAB(t_struct **stackA, t_struct **stackB)
+{
+	ft_swapA(&stackA);
+	ft_swapB(&stackB);
 }

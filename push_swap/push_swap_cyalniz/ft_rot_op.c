@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rev_op.c                                        :+:      :+:    :+:   */
+/*   ft_rot_op.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cyalniz <cyalniz@student.42kocaeli.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 16:44:27 by cyalniz           #+#    #+#             */
-/*   Updated: 2022/06/20 16:52:35 by cyalniz          ###   ########.fr       */
+/*   Updated: 2022/06/21 11:21:08 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-void	ft_rA(t_struct **stackA)
+void	ft_rotA(t_struct **stackA)
 {
-	t_struct *head;
+	t_struct 	*head;
 
 	if ((*stackA)->next == NULL)
 		return ;
@@ -25,7 +25,7 @@ void	ft_rA(t_struct **stackA)
 	write(1, "ra\n", 3);
 }
 
-void	ft_rB(t_struct **stackB)
+void	ft_rotB(t_struct **stackB)
 {
 	t_struct *head;
 
@@ -36,4 +36,10 @@ void	ft_rB(t_struct **stackB)
 	ft_lstadd_back(&head, *stackB);
 	*stackB = head;
 	write(1, "rb\n", 3);
+}
+
+void	ft_rotAB(t_struct **stackA, t_struct **stackB)
+{
+	ft_rotA(&stackA);
+	ft_rotB(&stackB);
 }
