@@ -6,7 +6,7 @@
 /*   By: cyalniz <cyalniz@student.42kocaeli.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 12:17:48 by cyalniz           #+#    #+#             */
-/*   Updated: 2022/06/21 22:27:25 by cyalniz          ###   ########.fr       */
+/*   Updated: 2022/06/21 23:52:50 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int	main(int ac, char **av)
 {	
+	//int	arr[ac - 1]; arguman olarak sadece "-" gonderince sistem patliyor
 	if(ac > 1 && ft_argCheck(av))
 	{
 		
@@ -31,7 +32,7 @@ int	main(int ac, char **av)
 		}
 		
 		ft_mainSort(&stackA, &stackB, ac - 1);
-		ft_stacxk_print(stackA);
+		ft_stack_print(stackA);
 
 
 		

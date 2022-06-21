@@ -6,7 +6,7 @@
 /*   By: cyalniz <cyalniz@student.42kocaeli.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 22:30:42 by cyalniz           #+#    #+#             */
-/*   Updated: 2022/06/21 22:45:13 by cyalniz          ###   ########.fr       */
+/*   Updated: 2022/06/21 23:38:27 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_pushSmallMiniA(t_struct **stackA, int i, int j)
 	if (j < 3)
 	{
 		i = 0;
-		while (i < n)
+		while (i < j)
 		{
 			ft_rotA(stackA);
 			i++;
@@ -25,7 +25,11 @@ void	ft_pushSmallMiniA(t_struct **stackA, int i, int j)
 	}
 	else
 	{
-		while(i )
+		while(i >= j)
+		{
+			ft_revRotA(stackA);
+			i--;
+		}
 	}
 }
 

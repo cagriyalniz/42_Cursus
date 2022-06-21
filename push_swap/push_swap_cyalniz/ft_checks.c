@@ -6,7 +6,7 @@
 /*   By: cyalniz <cyalniz@student.42kocaeli.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 11:26:18 by cyalniz           #+#    #+#             */
-/*   Updated: 2022/06/21 18:09:08 by cyalniz          ###   ########.fr       */
+/*   Updated: 2022/06/21 23:46:40 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,12 @@ int	ft_argCheck(char **s)
 				write(1, "arg error\n", 10);
 				return 0;
 			}
+/* 			if(s[i][j] == '-' && ft_isdigit(s[i][j] != 1))
+			{
+				write(1, "arg error\n", 10);
+				return 0;
+			} */
+		//	printf("%c \n", s[i][j]);
 			j++;
 		}
 		i++;

@@ -6,7 +6,7 @@
 /*   By: cyalniz <cyalniz@student.42kocaeli.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 12:40:11 by cyalniz           #+#    #+#             */
-/*   Updated: 2022/06/21 12:27:04 by cyalniz          ###   ########.fr       */
+/*   Updated: 2022/06/21 23:46:35 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ t_struct *ft_lst_fill(char **av, int nmbr)
 					ft_lstFree(&head);
 					break ;
 				}
+		printf("%d \n", temp->value);
 		ft_lstadd_back(&head, temp);
 		i++;
 	}
