@@ -6,7 +6,7 @@
 /*   By: cyalniz <cyalniz@student.42kocaeli.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 11:26:18 by cyalniz           #+#    #+#             */
-/*   Updated: 2022/06/21 13:02:24 by cyalniz          ###   ########.fr       */
+/*   Updated: 2022/06/21 18:09:08 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int	ft_dupCheck(char **s, int counter)
 			}
 		i++;
 	}
-	printf("\nnot duplc\n");
+	
 	return 1;
 }
 

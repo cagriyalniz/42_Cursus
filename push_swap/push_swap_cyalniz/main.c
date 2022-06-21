@@ -6,7 +6,7 @@
 /*   By: cyalniz <cyalniz@student.42kocaeli.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 12:17:48 by cyalniz           #+#    #+#             */
-/*   Updated: 2022/06/21 13:05:32 by cyalniz          ###   ########.fr       */
+/*   Updated: 2022/06/21 18:08:48 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ int	main(int ac, char **av)
 			return (0);
 		}
 		
-		ft_sort(&stackA, &stackB, ac - 1);
-
+		ft_mainSort(&stackA, &stackB, ac - 1);
+		ft_stack_print(stackA);
 
 
 		

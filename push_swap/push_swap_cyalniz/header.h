@@ -6,7 +6,7 @@
 /*   By: cyalniz <cyalniz@student.42kocaeli.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 12:18:31 by cyalniz           #+#    #+#             */
-/*   Updated: 2022/06/21 13:11:45 by cyalniz          ###   ########.fr       */
+/*   Updated: 2022/06/21 18:07:22 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,4 +59,7 @@ void	ft_mainSort(t_struct **stackA, t_struct **stackB, int ac);
 void	ft_smallSort(t_struct **stackA, t_struct **stackB, int ac);
 
 
+//three sort
+void	ft_sortThree(t_struct **stackA);
+void	ft_otherThree(t_struct **stackA, int *nums);
 #endif
