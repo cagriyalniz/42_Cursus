@@ -6,7 +6,7 @@
 /*   By: cyalniz <cyalniz@student.42kocaeli.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 11:08:35 by cyalniz           #+#    #+#             */
-/*   Updated: 2022/06/21 11:19:54 by cyalniz          ###   ########.fr       */
+/*   Updated: 2022/06/21 11:37:57 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,6 @@ void	ft_revRotB(t_struct **stackB)
 
 void	ft_revRotAB(t_struct **stackA, t_struct **stackB)
 {
-	ft_revRotA(&stackA);
-	ft_revRotB(&stackB);
+	ft_revRotA(stackA);
+	ft_revRotB(stackB);
 }

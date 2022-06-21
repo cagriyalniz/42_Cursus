@@ -1,33 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_arg_nmbr.c                                      :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cyalniz <cyalniz@student.42kocaeli.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/20 12:31:56 by cyalniz           #+#    #+#             */
-/*   Updated: 2022/06/20 12:38:41 by cyalniz          ###   ########.fr       */
+/*   Created: 2022/02/01 14:37:18 by cyalniz           #+#    #+#             */
+/*   Updated: 2022/06/21 11:53:41 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "libft.h"
 
-/* int	ft_argv_nmbr(char **s)
+bool	ft_isdigit(int ch)
 {
-
-	int		i;
-	int		j;
-	int		count;
-
-	count = 0;
-	j = 0;
-	i = 1;
-	while(s[i] != NULL)
+	if (ch > 47 && ch < 58)
 	{
-		
-		if(s[i] == ' ')
-			count++;
-		i++;
+		return (true);
 	}
-	return count;
-} */
+	return (false);
+}

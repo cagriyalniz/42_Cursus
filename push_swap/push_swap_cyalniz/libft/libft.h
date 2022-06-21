@@ -6,7 +6,7 @@
 /*   By: cyalniz <cyalniz@student.42kocaeli.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 13:28:59 by cyalniz           #+#    #+#             */
-/*   Updated: 2022/06/20 14:12:58 by cyalniz          ###   ########.fr       */
+/*   Updated: 2022/06/21 11:47:18 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdbool.h>
 
 typedef struct s_struct
 {
@@ -25,11 +26,11 @@ typedef struct s_struct
 }t_struct;
 
 //is
-int		ft_isalnum(int c);
-int		ft_isalpha(int c);
-int		ft_isascii(int c);
-int		ft_isdigit(int c);
-int		ft_isprint(int c);
+int			ft_isalnum(int c);
+int			ft_isalpha(int c);
+int			ft_isascii(int c);
+bool		ft_isdigit(int c);
+int			t_isprint(int c);
 
 //to
 int		ft_atoi(const char *ch);

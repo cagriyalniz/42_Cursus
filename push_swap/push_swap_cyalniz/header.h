@@ -6,7 +6,7 @@
 /*   By: cyalniz <cyalniz@student.42kocaeli.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 12:18:31 by cyalniz           #+#    #+#             */
-/*   Updated: 2022/06/21 11:22:52 by cyalniz          ###   ########.fr       */
+/*   Updated: 2022/06/21 11:36:07 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@
  */
 int main(int ac, char **av);
 t_struct *ft_lst_fill(char **av, int nmbr);
-// int	ft_argv_nmbr(char **s);
+int	ft_arg_check(char **s);
 
 //
 void ft_stack_print(t_struct *structA);

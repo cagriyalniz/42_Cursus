@@ -6,7 +6,7 @@
 #    By: cyalniz <cyalniz@student.42kocaeli.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/20 13:37:23 by cyalniz           #+#    #+#              #
-#    Updated: 2022/06/21 11:07:41 by cyalniz          ###   ########.fr        #
+#    Updated: 2022/06/21 11:33:03 by cyalniz          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,8 @@
 NAME = push_swap
 
 CFILES = ft_lst_functions.c main.c kontrolislemleri.c \
-		ft_swap_op.c ft_push_op.c ft_rot_op.c ft_rev_rot_op.c
+		ft_swap_op.c ft_push_op.c ft_rot_op.c ft_rev_rot_op.c \
+		ft_arg_check.c
 
 OBJECTS = $(CFILES:.c=.o)
 

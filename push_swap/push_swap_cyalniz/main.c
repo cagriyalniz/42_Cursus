@@ -6,16 +6,17 @@
 /*   By: cyalniz <cyalniz@student.42kocaeli.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 12:17:48 by cyalniz           #+#    #+#             */
-/*   Updated: 2022/06/21 11:07:04 by cyalniz          ###   ########.fr       */
+/*   Updated: 2022/06/21 12:11:13 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
 int	main(int ac, char **av)
-{
-	if(ac > 1)
+{	
+	if(ac > 1 && ft_arg_check(av))
 	{
+		
 		t_struct *stackA;
 		t_struct *stackB;
 

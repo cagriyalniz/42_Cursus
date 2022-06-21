@@ -1,6 +1,6 @@
 NAME	= libft
 
-SRC	=	ft_atoi.c ft_lstnew.c \
+SRC	=	ft_atoi.c ft_isdigit.c ft_lstnew.c \
 	ft_lstadd_front.c \
 	ft_lstsize.c\
 	ft_lstlast.c \
