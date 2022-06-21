@@ -6,7 +6,7 @@
 /*   By: cyalniz <cyalniz@student.42kocaeli.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 12:40:11 by cyalniz           #+#    #+#             */
-/*   Updated: 2022/06/20 16:45:51 by cyalniz          ###   ########.fr       */
+/*   Updated: 2022/06/21 12:27:04 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ t_struct *ft_lst_fill(char **av, int nmbr)
 	while (i < nmbr)
 	{
 		temp = ft_lstnew(ft_atoi(av[i]));
-		/* 		if (temp == NULL)
+				if (temp == NULL)
 				{
-					ft_lst_free(&head);
+					ft_lstFree(&head);
 					break ;
-				} */
+				}
 		ft_lstadd_back(&head, temp);
 		i++;
 	}

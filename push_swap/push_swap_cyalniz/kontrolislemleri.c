@@ -1,11 +1,11 @@
 #include "header.h"
-void ft_stack_print(t_struct *structA)
+void ft_stack_print(t_struct *stackA)
 {
 	//printf("test");
-	while(structA)
+	while(stackA)
 	{
-		printf("%d ", structA->value);
-		structA = structA->next;
+		printf("%d ", stackA->value);
+		stackA = stackA->next;
 	}
 	printf("\n \n");
 }

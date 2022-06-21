@@ -6,7 +6,7 @@
 /*   By: cyalniz <cyalniz@student.42kocaeli.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 12:17:48 by cyalniz           #+#    #+#             */
-/*   Updated: 2022/06/21 12:11:13 by cyalniz          ###   ########.fr       */
+/*   Updated: 2022/06/21 13:05:32 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,28 @@
 
 int	main(int ac, char **av)
 {	
-	if(ac > 1 && ft_arg_check(av))
+	if(ac > 1 && ft_argCheck(av))
 	{
 		
 		t_struct *stackA;
 		t_struct *stackB;
 
 		stackB = NULL;
-		printf("%d\n", ac - 1);
+		//printf("%d\n", ac - 1);
 		stackA = ft_lst_fill(av, ac);
-		ft_stack_print(stackA);
+		if (ft_isSorted(stackA) == 1)
+		{
+			printf("sirali");
+			ft_lstFree(&stackA);
+			return (0);
+		}
+		
+		ft_sort(&stackA, &stackB, ac - 1);
+
+
+
+		
+/* 		ft_stack_print(stackA);
 		printf("\n");
 		ft_rotA(&stackA);
 		ft_stack_print(stackA);
@@ -36,6 +48,6 @@ int	main(int ac, char **av)
 		ft_stack_print(stackB);
 		ft_pushA(&stackA, &stackB);
 		ft_stack_print(stackA);
-		ft_stack_print(stackB);
+		ft_stack_print(stackB); */
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: cyalniz <cyalniz@student.42kocaeli.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 12:18:31 by cyalniz           #+#    #+#             */
-/*   Updated: 2022/06/21 11:36:07 by cyalniz          ###   ########.fr       */
+/*   Updated: 2022/06/21 13:11:45 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,16 @@
  */
 int main(int ac, char **av);
 t_struct *ft_lst_fill(char **av, int nmbr);
-int	ft_arg_check(char **s);
 
+int	ft_isSorted(t_struct *stackA);
+void	ft_lstFree(t_struct **stackA);
 //
-void ft_stack_print(t_struct *structA);
+void ft_stack_print(t_struct *stackA);
+
+//checks
+int	ft_argCheck(char **s);
+int	*ft_toArr(char **s, int counter);
+int	ft_dupCheck(char **s, int counter);
 
 // operations
 void ft_swapA(t_struct **stackA);
@@ -47,5 +53,10 @@ void	ft_rotAB(t_struct **stackA, t_struct **stackB);
 void	ft_revRotA(t_struct **stackA);
 void	ft_revRotB(t_struct **stackB);
 void	ft_revRotAB(t_struct **stackA, t_struct **stackB);
+
+//sort
+void	ft_mainSort(t_struct **stackA, t_struct **stackB, int ac);
+void	ft_smallSort(t_struct **stackA, t_struct **stackB, int ac);
+
 
 #endif
