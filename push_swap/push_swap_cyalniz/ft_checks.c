@@ -40,7 +40,6 @@ int	ft_dupCheck(char **s, int counter)
 	int	*myArr;
 
 	i = 0;
-	//myArr = ft_toArr(s, counter);
 	myArr = ft_toArr(s, counter);
 	while(i < counter)
 	{
@@ -66,28 +65,20 @@ int	ft_argCheck(char **s)
 	int	j;
 	
 	i = 1;
-	j = 0;
 	while (s[i])
 	{
 		j = 0;
 		while (s[i][j] != '\0')
 		{
-			if (ft_isdigit(s[i][j]) != 1 && (s[i][j] != '-'))
-			{
-				write(1, "arg error\n", 10);
+			if (s[i][j] == '-')
+				j++;
+			if (!ft_isdigit(s[i][j]))
 				return 0;
-			}
-/* 			if(s[i][j] == '-' && ft_isdigit(s[i][j] != 1))
-			{
-				write(1, "arg error\n", 10);
-				return 0;
-			} */
-		//	printf("%c \n", s[i][j]);
 			j++;
 		}
 		i++;
 	}
-	
+		
 	if (ft_dupCheck(s, i - 1) == 0)
 		return 0;
 	return 1;
