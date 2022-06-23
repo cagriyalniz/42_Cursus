@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cyalniz <cyalniz@student.42kocaeli.com>    +#+  +:+       +#+        */
+/*   By: cyalniz <cyalniz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 12:17:48 by cyalniz           #+#    #+#             */
-/*   Updated: 2022/06/21 23:52:50 by cyalniz          ###   ########.fr       */
+/*   Updated: 2022/06/23 16:24:40 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,12 @@ int	main(int ac, char **av)
 			return (0);
 		}
 		
-		ft_mainSort(&stackA, &stackB, ac - 1);
+		ft_stack_index_print(stackA);
+		
+		/* ft_mainSort(&stackA, &stackB, ac - 1);
 		ft_stack_print(stackA);
-
-
+		ft_stack_print(stackB);
+ */
 		
 /* 		ft_stack_print(stackA);
 		printf("\n");

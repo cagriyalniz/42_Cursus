@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   header.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cyalniz <cyalniz@student.42kocaeli.com>    +#+  +:+       +#+        */
+/*   By: cyalniz <cyalniz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 12:18:31 by cyalniz           #+#    #+#             */
-/*   Updated: 2022/06/21 23:36:52 by cyalniz          ###   ########.fr       */
+/*   Updated: 2022/06/23 16:25:32 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ int	ft_isSorted(t_struct *stackA);
 void	ft_lstFree(t_struct **stackA);
 //
 void ft_stack_print(t_struct *stackA);
+void ft_stack_index_print(t_struct *stackA);
 
 //checks
 int	ft_argCheck(char **s);
@@ -70,5 +71,13 @@ void	ft_pushSmallMiniA(t_struct **stackA, int i, int j);
 
 //five sort
 void	ft_sortFive(t_struct **stackA, t_struct **stackB);
+
+//medium sort
+void    ft_mediumSort(t_struct **stackA, t_struct **stackB);
+
+//find operations
+long int    ft_findMax(t_struct *stackA);
+long int    ft_findMin(t_struct *stackA);
+void		add_index(t_struct **stackA);
 
 #endif

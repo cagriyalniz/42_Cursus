@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cyalniz <cyalniz@student.42kocaeli.com>    +#+  +:+       +#+        */
+/*   By: cyalniz <cyalniz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 13:28:59 by cyalniz           #+#    #+#             */
-/*   Updated: 2022/06/21 11:47:18 by cyalniz          ###   ########.fr       */
+/*   Updated: 2022/06/23 16:14:57 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 typedef struct s_struct
 {
 	int				value;
+	int				index;
 	struct s_struct	*next;
 	//struct t_stack	*prev;
 	

@@ -9,3 +9,14 @@ void ft_stack_print(t_struct *stackA)
 	}
 	printf("\n \n");
 }
+
+void ft_stack_index_print(t_struct *stackA)
+{
+	//printf("test");
+	while(stackA)
+	{
+		printf("%d ", stackA->index);
+		stackA = stackA->next;
+	}
+	printf("\n \n");
+}

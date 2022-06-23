@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cyalniz <cyalniz@student.42kocaeli.com>    +#+  +:+       +#+        */
+/*   By: cyalniz <cyalniz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 13:03:40 by cyalniz           #+#    #+#             */
-/*   Updated: 2022/06/21 23:37:35 by cyalniz          ###   ########.fr       */
+/*   Updated: 2022/06/23 15:57:31 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ void	ft_mainSort(t_struct **stackA, t_struct **stackB, int ac)
 	(void)stackB;
 	if (ac <= 5)
 		ft_smallSort(stackA, stackB, ac);
-/* 	else if (ac <= 100)
-		ft_mediumSort();
-	else if (ac > 100)
+	else if (ac <= 100)
+		ft_mediumSort(stackA, stackB);
+/* 	else if (ac > 100)
 		ft_bigSort(); */
 }

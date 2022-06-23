@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "../header.h"
 
 void ft_pushA(t_struct **stackA, t_struct **stackB)
 {

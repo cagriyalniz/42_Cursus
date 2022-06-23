@@ -3,14 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lst_functions.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cyalniz <cyalniz@student.42kocaeli.com>    +#+  +:+       +#+        */
+/*   By: cyalniz <cyalniz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 12:40:11 by cyalniz           #+#    #+#             */
-/*   Updated: 2022/06/21 23:46:35 by cyalniz          ###   ########.fr       */
+/*   Updated: 2022/06/23 16:26:43 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
+
+void	add_index(t_struct **stackA)
+{
+	t_struct	*head;
+	int			i;
+
+	i = 0;
+	head = 	ft_findMin(*stackA);
+	while (head)
+	{
+		head->index = i;
+		i++;
+		head = ft_findMin(*stackA);
+	}
+}
 
 t_struct *ft_lst_fill(char **av, int nmbr)
 {
@@ -32,6 +47,7 @@ t_struct *ft_lst_fill(char **av, int nmbr)
 		ft_lstadd_back(&head, temp);
 		i++;
 	}
+	add_index(&head);
 	// free(av);
 	return head;
 }
