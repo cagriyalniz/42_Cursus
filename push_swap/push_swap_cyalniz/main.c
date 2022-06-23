@@ -17,7 +17,7 @@ int	main(int ac, char **av)
 	//int	arr[ac - 1]; arguman olarak sadece "-" gonderince sistem patliyor
 	if(ac > 1 && ft_argCheck(av))
 	{
-//		
+		
 		t_struct *stackA;
 		t_struct *stackB;
 
