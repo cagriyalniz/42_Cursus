@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_checks.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cyalniz <cyalniz@student.42kocaeli.com>    +#+  +:+       +#+        */
+/*   By: cyalniz <cyalniz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 11:26:18 by cyalniz           #+#    #+#             */
-/*   Updated: 2022/06/21 23:46:40 by cyalniz          ###   ########.fr       */
+/*   Updated: 2022/06/27 10:25:04 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,13 @@ int	ft_isSorted(t_struct *stackA)
 		stackA = stackA->next;
 	}
 	return (1);
+}
+
+int ft_isEmpty(t_struct *stackA)
+{
+	if(!stackA)
+		return 0;
+	return 1;
 }
 
 void	ft_lstFree(t_struct **stackA)

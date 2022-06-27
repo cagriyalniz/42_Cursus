@@ -6,7 +6,7 @@
 /*   By: cyalniz <cyalniz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 12:18:31 by cyalniz           #+#    #+#             */
-/*   Updated: 2022/06/23 16:25:32 by cyalniz          ###   ########.fr       */
+/*   Updated: 2022/06/27 10:35:20 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ void ft_stack_index_print(t_struct *stackA);
 int	ft_argCheck(char **s);
 int	*ft_toArr(char **s, int counter);
 int	ft_dupCheck(char **s, int counter);
+int ft_isEmpty(t_struct *stackA);
 
 // operations
 void ft_swapA(t_struct **stackA);
@@ -58,7 +59,7 @@ void	ft_revRotAB(t_struct **stackA, t_struct **stackB);
 //sort
 void	ft_mainSort(t_struct **stackA, t_struct **stackB, int ac);
 void	ft_smallSort(t_struct **stackA, t_struct **stackB, int ac);
-
+void	ft_radixSort(t_struct **stackA, t_struct **stackB);
 
 //three sort
 void	ft_sortThree(t_struct **stackA);
@@ -79,5 +80,6 @@ void    ft_mediumSort(t_struct **stackA, t_struct **stackB);
 long int    ft_findMax(t_struct *stackA);
 long int    ft_findMin(t_struct *stackA);
 void		add_index(t_struct **stackA);
+
 
 #endif

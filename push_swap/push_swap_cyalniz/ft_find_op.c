@@ -6,7 +6,7 @@
 /*   By: cyalniz <cyalniz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 15:49:50 by cyalniz           #+#    #+#             */
-/*   Updated: 2022/06/23 16:29:14 by cyalniz          ###   ########.fr       */
+/*   Updated: 2022/06/27 09:53:28 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,14 +38,4 @@ long int    ft_findMin(t_struct *stackA)
         stackA = stackA->next;
     }
     return min;
-}
-
-static t_struct *get_next_min(t_struct **stackA)
-{
-    t_struct    *head;
-    t_struct    *min;
-    int         flag;
-    
-    head = *stack;
-    flag = 0;
 }

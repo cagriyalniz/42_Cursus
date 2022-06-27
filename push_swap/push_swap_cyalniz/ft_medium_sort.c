@@ -6,7 +6,7 @@
 /*   By: cyalniz <cyalniz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 15:45:16 by cyalniz           #+#    #+#             */
-/*   Updated: 2022/06/23 16:05:43 by cyalniz          ###   ########.fr       */
+/*   Updated: 2022/06/27 10:32:21 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void    ft_mediumSort(t_struct **stackA, t_struct **stackB)
     
     max = ft_findMax(*stackA);
     printf("max: %ld\n", max);
-    while(ft_isSorted(*stackA) == 0)
+    while(ft_isSorted(*stackA) == 0 && ft_isEmpty(*stackB))
     {
         if ((*stackA)->value < max)
         {
@@ -32,3 +32,4 @@ void    ft_mediumSort(t_struct **stackA, t_struct **stackB)
         *stackA = (*stackA)->next;
     }
 }
+

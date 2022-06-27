@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cyalniz <cyalniz@student.42kocaeli.com>    +#+  +:+       +#+        */
+/*   By: cyalniz <cyalniz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 19:19:20 by cyalniz           #+#    #+#             */
-/*   Updated: 2022/06/20 14:06:58 by cyalniz          ###   ########.fr       */
+/*   Updated: 2022/06/27 10:17:28 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+#include <stdio.h>
 t_struct	*ft_lstnew(int value)
 {
 	t_struct	*cntn;
@@ -20,6 +20,8 @@ t_struct	*ft_lstnew(int value)
 	if (!cntn)
 		return (NULL);
 	cntn->value = value;
+	cntn->index = -1;
 	cntn->next = NULL;
+	
 	return (cntn);
 }

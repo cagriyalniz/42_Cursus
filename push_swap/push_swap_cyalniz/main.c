@@ -6,7 +6,7 @@
 /*   By: cyalniz <cyalniz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 12:17:48 by cyalniz           #+#    #+#             */
-/*   Updated: 2022/06/23 16:24:40 by cyalniz          ###   ########.fr       */
+/*   Updated: 2022/06/27 10:50:32 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ int	main(int ac, char **av)
 		stackB = NULL;
 		//printf("%d\n", ac - 1);
 		stackA = ft_lst_fill(av, ac);
+		ft_stack_index_print(stackA);
+
 		if (ft_isSorted(stackA) == 1)
 		{
 			printf("sirali");
@@ -31,12 +33,14 @@ int	main(int ac, char **av)
 			return (0);
 		}
 		
-		ft_stack_index_print(stackA);
 		
-		/* ft_mainSort(&stackA, &stackB, ac - 1);
-		ft_stack_print(stackA);
+		
+		ft_mainSort(&stackA, &stackB, ac - 1);
+/* 		ft_stack_print(stackA);
 		ft_stack_print(stackB);
- */
+		if(ft_isSorted(stackA) == 1)
+			printf("ok"); */
+
 		
 /* 		ft_stack_print(stackA);
 		printf("\n");
