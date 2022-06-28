@@ -6,15 +6,15 @@
 /*   By: cyalniz <cyalniz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 11:26:18 by cyalniz           #+#    #+#             */
-/*   Updated: 2022/06/27 10:25:04 by cyalniz          ###   ########.fr       */
+/*   Updated: 2022/06/27 16:19:04 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-int	*ft_toArr(char **s, int counter)
+int	*ft_to_arr(char **s, int counter)
 {
-	int	*myArr;
+	int	*my_arr;
 	int	i;
 	int	j;
 	int	k;
@@ -22,69 +22,76 @@ int	*ft_toArr(char **s, int counter)
 	i = 1;
 	k = 0;
 	j = 0;
-	myArr = (int*)malloc(sizeof(int)*counter);
-	while(s[i])
+	my_arr = (int*) malloc(sizeof(int)*counter);
+	while (s[i])
 	{
-		myArr[k] = ft_atoi(&s[i][j]);
+		my_arr[k] = ft_atoi(&s[i][j]);
 		k++;
 		i++;
 	}
-	
-	return myArr;
+	return (my_arr);
 }
 
-int	ft_dupCheck(char **s, int counter)
+int	ft_dup_check(char **s, int counter)
 {
 	int	i;
 	int	j;
-	int	*myArr;
+	int	*my_arr;
 
 	i = 0;
-	myArr = ft_toArr(s, counter);
-	while(i < counter)
+	my_arr = ft_to_arr(s, counter);
+	while (i < counter)
 	{
-			j = i + 1;
-			while(j < counter)
+		j = i + 1;
+		while (j < counter)
+		{
+			if (my_arr[i] == my_arr[j])
 			{
-				if (myArr[i] == myArr[j])
-				{
-					printf("duplicate");
-					return 0;
-				}
-				j++;
+				write(1, "Error\n", 6);
+				return (0);
 			}
+			j++;
+		}
 		i++;
 	}
-	
-	return 1;
+	free(my_arr);
+	return (1);
 }
 
-int	ft_argCheck(char **s)
+int	ft_arg_check(char **s)
 {
 	int	i;
 	int	j;
-	
+
 	i = 1;
 	while (s[i])
 	{
 		j = 0;
 		while (s[i][j] != '\0')
 		{
+			if (!(ft_atoi(&s[i][j]) < 2147483647
+				&& ft_atoi(&s[i][j]) > -2147483648))
+			{
+				write(1, "Error\n", 6);				
+				return (0);
+			}
 			if (s[i][j] == '-')
 				j++;
 			if (!ft_isdigit(s[i][j]))
-				return 0;
+			{
+				write(1, "Error\n", 6);				
+				return (0);
+			}
 			j++;
 		}
 		i++;
 	}
-		
-	if (ft_dupCheck(s, i - 1) == 0)
-		return 0;
-	return 1;
+	if (ft_dup_check(s, i - 1) == 0)
+		return (0);
+	return (1);
 }
 
-int	ft_isSorted(t_struct *stackA)
+int	ft_is_sorted(t_struct *stackA)
 {
 	while (stackA->next)
 	{
@@ -95,16 +102,9 @@ int	ft_isSorted(t_struct *stackA)
 	return (1);
 }
 
-int ft_isEmpty(t_struct *stackA)
+void	ft_lst_free(t_struct **stackA)
 {
-	if(!stackA)
-		return 0;
-	return 1;
-}
-
-void	ft_lstFree(t_struct **stackA)
-{
-	t_struct *temp;
+	t_struct	*temp;
 
 	temp = NULL;
 	while (*stackA)

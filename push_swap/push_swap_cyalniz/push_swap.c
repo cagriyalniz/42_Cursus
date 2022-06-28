@@ -6,7 +6,7 @@
 /*   By: cyalniz <cyalniz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 13:03:40 by cyalniz           #+#    #+#             */
-/*   Updated: 2022/06/27 10:45:01 by cyalniz          ###   ########.fr       */
+/*   Updated: 2022/06/27 17:17:08 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,13 @@ void	ft_smallSort(t_struct **stackA, t_struct **stackB, int ac)
 		ft_sortFive(stackA, stackB);
 }
 
-static int	get_max_bits(t_struct **stack)
+static int	get_max_bits(t_struct *stack)
 {
 	t_struct	*tmp;
-	int		max;
-	int		max_bits;
+	int			max;
+	int			max_bits;
 
-	tmp = *stack;
+	tmp = stack;
 	max = tmp->index;
 	max_bits = 0;
 	while (tmp)
@@ -59,8 +59,8 @@ void	ft_radixSort(t_struct **stackA, t_struct **stackB)
 	i = 0;
 	tmp = *stackA;
 	size = ft_lstsize(tmp);
-	max_bits = get_max_bits(stackA);
-	while (i < max_bits)
+	max_bits = get_max_bits(*stackA);
+	while (i < max_bits && !ft_is_sorted(*stackA))
 	{
 		j = 0;
 		while (j++ < size)
@@ -77,16 +77,11 @@ void	ft_radixSort(t_struct **stackA, t_struct **stackB)
 	}
 }
 
-void	ft_mainSort(t_struct **stackA, t_struct **stackB, int ac)
+void	ft_main_sort(t_struct **stackA, t_struct **stackB, int ac)
 {
-	(void)stackB;
 	if (ac <= 5)
 		ft_smallSort(stackA, stackB, ac);
 	else
 		ft_radixSort(stackA, stackB);
-/* 	else if (ac > 5 && ac <= 100)
-		ft_mediumSort(stackA, stackB);
-	else if (ac > 100)
-		ft_bigSort(); */
 }
 

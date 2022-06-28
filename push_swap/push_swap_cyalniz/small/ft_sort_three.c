@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sort_three.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cyalniz <cyalniz@student.42kocaeli.com>    +#+  +:+       +#+        */
+/*   By: cyalniz <cyalniz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 17:54:51 by cyalniz           #+#    #+#             */
-/*   Updated: 2022/06/21 18:10:33 by cyalniz          ###   ########.fr       */
+/*   Updated: 2022/06/27 11:35:11 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 void	ft_otherThree(t_struct **stackA, int *nums)
 {
-	if (nums[0] > nums[1] && nums[1] > nums[2])
+	if (nums[0] > nums[1] && nums[1] > nums[2]) // 7 6 5
 	{
 		ft_rotA(stackA);
 		ft_swapA(stackA);
 	}
-	else if(nums[0] < nums[1] && nums[1] > nums[2]
+	else if(nums[0] < nums[1] && nums[1] > nums[2]// 3 5 4
 	&& nums[0] < nums[2])
 	{
 		ft_swapA(stackA);
@@ -41,13 +41,13 @@ void	ft_sortThree(t_struct **stackA)
 		head = head->next;
 		i++;
 	}
-	if (nums[0] > nums[1] && nums[1] < nums[2]
+	if (nums[0] > nums[1] && nums[1] < nums[2]  //5 2 6 
 		&& nums[0] < nums[2])
 		ft_swapA(stackA);
-	else if (nums[0] < nums[1] && nums[1] > nums[2]
+	else if (nums[0] < nums[1] && nums[1] > nums[2] // 7 9 6 
 		&& nums[0] > nums[2])
 		ft_revRotA(stackA);
-	else if (nums[0] > nums[1] && nums[1] < nums[2]
+	else if (nums[0] > nums[1] && nums[1] < nums[2] // 7 5 6
 		&& nums[0] > nums[2])
 		ft_rotA(stackA);
 	else

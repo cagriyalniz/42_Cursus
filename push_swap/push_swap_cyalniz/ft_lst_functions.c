@@ -6,7 +6,7 @@
 /*   By: cyalniz <cyalniz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 12:40:11 by cyalniz           #+#    #+#             */
-/*   Updated: 2022/06/27 10:18:22 by cyalniz          ###   ########.fr       */
+/*   Updated: 2022/06/27 16:48:59 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,26 @@ static t_struct *get_next_min(t_struct **stackA)
     }
     return (min);
 }
+// 2 1 3 4 5
+/* 
+static t_struct *my_min(t_struct **stackA)
+{
+	t_struct	*head;
+	t_struct	*min;
+
+	head = *stackA;
+	min = NULL;
+	min->value = 2147483647;
+
+	while (head)
+	{
+		if(head->value < min->value)
+			min = head;
+		head = head->next;
+	}
+	return (min);
+} */
+
 void	add_index(t_struct **stackA)
 {
 	t_struct	*head;
@@ -50,9 +70,9 @@ void	add_index(t_struct **stackA)
 
 t_struct *ft_lst_fill(char **av, int nmbr)
 {
-	int i;
-	t_struct *head;
-	t_struct *temp;
+	int			i;
+	t_struct	*head;
+	t_struct	*temp;
 
 	i = 1;
 	head = NULL;
@@ -61,15 +81,12 @@ t_struct *ft_lst_fill(char **av, int nmbr)
 		temp = ft_lstnew(ft_atoi(av[i]));
 		if (temp == NULL)
 		{
-			ft_lstFree(&head);
+			ft_lst_free(&head);
 			break ;
 		}
-		printf("%d \n", temp->value);
 		ft_lstadd_back(&head, temp);
 		i++;
 	}
-	add_index(&head);
-	// free(av);
-	
-	return head;
+	add_index(&head);	
+	return (head);
 }
