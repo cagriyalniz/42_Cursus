@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_push_op.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cyalniz <cyalniz@student.42kocaeli.com>    +#+  +:+       +#+        */
+/*   By: cyalniz <cyalniz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 16:30:46 by cyalniz           #+#    #+#             */
-/*   Updated: 2022/06/20 16:45:59 by cyalniz          ###   ########.fr       */
+/*   Updated: 2022/06/28 16:21:01 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header.h"
 
-void ft_pushA(t_struct **stackA, t_struct **stackB)
+void	ft_push_a(t_struct **stackA, t_struct **stackB)
 {
-	t_struct *head;
+	t_struct	*head;
 
 	if (*stackB)
 	{
@@ -26,9 +26,9 @@ void ft_pushA(t_struct **stackA, t_struct **stackB)
 	}
 }
 
-void ft_pushB(t_struct **stackA, t_struct **stackB)
+void	ft_push_b(t_struct **stackA, t_struct **stackB)
 {
-	t_struct *head;
+	t_struct	*head;
 
 	if (*stackA)
 	{

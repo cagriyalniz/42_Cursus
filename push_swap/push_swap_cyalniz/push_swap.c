@@ -6,7 +6,7 @@
 /*   By: cyalniz <cyalniz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 13:03:40 by cyalniz           #+#    #+#             */
-/*   Updated: 2022/06/27 17:17:08 by cyalniz          ###   ########.fr       */
+/*   Updated: 2022/06/28 17:07:36 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@ void	ft_smallSort(t_struct **stackA, t_struct **stackB, int ac)
 	if (ac == 2)
 	{
 		if ((*stackA)->value > (*stackA)->next->value)
-			ft_swapA(stackA);    
+			ft_swap_a(stackA);    
 	}
 	else if (ac == 3)
-		ft_sortThree(stackA);
+		ft_sort_three(stackA);
 	else if (ac == 4)
-		ft_sourtFour(stackA, stackB);
+		ft_sourt_four(stackA, stackB);
 	else if (ac == 5)
-		ft_sortFive(stackA, stackB);
+		ft_sort_five(stackA, stackB);
 }
 
 static int	get_max_bits(t_struct *stack)
@@ -67,12 +67,12 @@ void	ft_radixSort(t_struct **stackA, t_struct **stackB)
 		{
 			tmp = *stackA;
 			if (((tmp->index >> i) & 1) == 1)
-				ft_rotA(stackA);
+				ft_rot_a(stackA);
 			else
-				ft_pushB(stackA, stackB);
+				ft_push_b(stackA, stackB);
 		}
 		while (ft_lstsize(*stackB) != 0)
-			ft_pushA(stackA, stackB);
+			ft_push_a(stackA, stackB);
 		i++;
 	}
 }

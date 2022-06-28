@@ -6,53 +6,34 @@
 /*   By: cyalniz <cyalniz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 12:40:11 by cyalniz           #+#    #+#             */
-/*   Updated: 2022/06/27 16:48:59 by cyalniz          ###   ########.fr       */
+/*   Updated: 2022/06/28 16:55:38 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-static t_struct *get_next_min(t_struct **stackA)
-{
-    t_struct    *head;
-    t_struct    *min;
-    int         flag;
-    
-    head = *stackA;
-    flag = 0;
-    min = NULL;
-    if (!head)
-        return (NULL);
-    while (head)
-    {
-        if ((head->index == -1) && (!flag || head->value < min->value))
-        {
-            flag = 1;
-            min = head;
-        }
-        head = head->next;
-    }
-    return (min);
-}
-// 2 1 3 4 5
-/* 
-static t_struct *my_min(t_struct **stackA)
+static t_struct	*get_next_min(t_struct **stackA)
 {
 	t_struct	*head;
 	t_struct	*min;
+	int			flag;
 
 	head = *stackA;
+	flag = 0;
 	min = NULL;
-	min->value = 2147483647;
-
+	if (!head)
+		return (NULL);
 	while (head)
 	{
-		if(head->value < min->value)
+		if ((head->index == -1) && (!flag || head->value < min->value))
+		{
+			flag = 1;
 			min = head;
+		}
 		head = head->next;
 	}
 	return (min);
-} */
+}
 
 void	add_index(t_struct **stackA)
 {
@@ -60,7 +41,7 @@ void	add_index(t_struct **stackA)
 	int			i;
 
 	i = 0;
-	head = 	get_next_min(stackA);
+	head = get_next_min(stackA);
 	while (head)
 	{
 		head->index = i++;
@@ -68,7 +49,7 @@ void	add_index(t_struct **stackA)
 	}
 }
 
-t_struct *ft_lst_fill(char **av, int nmbr)
+t_struct	*ft_lst_fill(char **av, int nmbr)
 {
 	int			i;
 	t_struct	*head;
@@ -87,6 +68,22 @@ t_struct *ft_lst_fill(char **av, int nmbr)
 		ft_lstadd_back(&head, temp);
 		i++;
 	}
-	add_index(&head);	
+	add_index(&head);
 	return (head);
+}
+
+void	ft_lst_free(t_struct **stackA)
+{
+	t_struct	*temp;
+
+	temp = NULL;
+	while (*stackA)
+	{
+		temp = (*stackA)->next;
+		free(*stackA);
+		*stackA = NULL;
+		if (temp == NULL)
+			break ;
+		*stackA = temp;
+	}
 }

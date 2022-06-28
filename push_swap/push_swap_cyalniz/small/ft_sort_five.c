@@ -6,19 +6,21 @@
 /*   By: cyalniz <cyalniz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 23:33:31 by cyalniz           #+#    #+#             */
-/*   Updated: 2022/06/27 13:01:04 by cyalniz          ###   ########.fr       */
+/*   Updated: 2022/06/28 17:07:36 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header.h"
 
-void	ft_sortFive(t_struct **stackA, t_struct **stackB)
+void	ft_sort_five(t_struct **stackA, t_struct **stackB)
 {
-	int flag = 0;
-	ft_pushSmallA(stackA, stackB, flag);
+	int	flag;
+
+	flag = 0;
+	ft_push_small_a(stackA, stackB, flag);
 	flag = 1;
-	ft_pushSmallA(stackA, stackB, flag);
-	ft_sortThree(stackA);
-	ft_pushA(stackA, stackB);
-	ft_pushA(stackA, stackB);
+	ft_push_small_a(stackA, stackB, flag);
+	ft_sort_three(stackA);
+	ft_push_a(stackA, stackB);
+	ft_push_a(stackA, stackB);
 }

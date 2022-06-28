@@ -6,7 +6,7 @@
 /*   By: cyalniz <cyalniz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 11:26:18 by cyalniz           #+#    #+#             */
-/*   Updated: 2022/06/27 16:19:04 by cyalniz          ###   ########.fr       */
+/*   Updated: 2022/06/28 16:51:17 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	*ft_to_arr(char **s, int counter)
 	i = 1;
 	k = 0;
 	j = 0;
-	my_arr = (int*) malloc(sizeof(int)*counter);
+	my_arr = (int *)malloc(sizeof(int) * counter);
 	while (s[i])
 	{
 		my_arr[k] = ft_atoi(&s[i][j]);
@@ -58,6 +58,15 @@ int	ft_dup_check(char **s, int counter)
 	return (1);
 }
 
+void	ft_max_min_check(char *a)
+{
+	if (!(ft_atoi(a) < 2147483647 && ft_atoi(a) > -2147483648))
+	{
+		write(1, "Error\n", 6);
+		exit (0);
+	}
+}
+
 int	ft_arg_check(char **s)
 {
 	int	i;
@@ -69,17 +78,12 @@ int	ft_arg_check(char **s)
 		j = 0;
 		while (s[i][j] != '\0')
 		{
-			if (!(ft_atoi(&s[i][j]) < 2147483647
-				&& ft_atoi(&s[i][j]) > -2147483648))
-			{
-				write(1, "Error\n", 6);				
-				return (0);
-			}
+			ft_max_min_check(&s[i][j]);
 			if (s[i][j] == '-')
 				j++;
 			if (!ft_isdigit(s[i][j]))
 			{
-				write(1, "Error\n", 6);				
+				write(1, "Error\n", 6);
 				return (0);
 			}
 			j++;
@@ -100,20 +104,4 @@ int	ft_is_sorted(t_struct *stackA)
 		stackA = stackA->next;
 	}
 	return (1);
-}
-
-void	ft_lst_free(t_struct **stackA)
-{
-	t_struct	*temp;
-
-	temp = NULL;
-	while (*stackA)
-	{
-		temp = (*stackA)->next;
-		free(*stackA);
-		*stackA = NULL;
-		if (temp == NULL)
-			break ;
-		*stackA = temp;
-	}
 }

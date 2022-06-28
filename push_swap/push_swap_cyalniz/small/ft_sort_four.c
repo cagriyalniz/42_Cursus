@@ -6,16 +6,18 @@
 /*   By: cyalniz <cyalniz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 22:28:42 by cyalniz           #+#    #+#             */
-/*   Updated: 2022/06/27 13:01:18 by cyalniz          ###   ########.fr       */
+/*   Updated: 2022/06/28 17:07:36 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header.h"
 
-void	ft_sourtFour(t_struct **stackA, t_struct **stackB)
+void	ft_sourt_four(t_struct **stackA, t_struct **stackB)
 {
-	int flag = 0;
-	ft_pushSmallA(stackA, stackB, flag);
-	ft_sortThree(stackA);
-	ft_pushA(stackA, stackB);
+	int	flag;
+
+	flag = 0;
+	ft_push_small_a(stackA, stackB, flag);
+	ft_sort_three(stackA);
+	ft_push_a(stackA, stackB);
 }
