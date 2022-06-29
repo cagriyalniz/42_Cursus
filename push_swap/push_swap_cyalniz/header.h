@@ -6,7 +6,7 @@
 /*   By: cyalniz <cyalniz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 12:18:31 by cyalniz           #+#    #+#             */
-/*   Updated: 2022/06/28 17:07:36 by cyalniz          ###   ########.fr       */
+/*   Updated: 2022/06/29 16:20:13 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void		ft_rev_rot_ab(t_struct **stackA, t_struct **stackB);
 
 //sort
 void		ft_main_sort(t_struct **stackA, t_struct **stackB, int ac);
-void		ft_smallSort(t_struct **stackA, t_struct **stackB, int ac);
+void		ft_small_sort(t_struct **stackA, t_struct **stackB, int ac);
 
 //three sort
 void		ft_sort_three(t_struct **stackA);
@@ -58,7 +58,7 @@ void		ft_push_small_a(t_struct **stackA, t_struct **stackB, int flag);
 void		ft_sort_five(t_struct **stackA, t_struct **stackB);
 
 //big sort
-void		ft_radixSort(t_struct **stackA, t_struct **stackB);
+void		ft_radix_sort(t_struct **stackA, t_struct **stackB);
 
 //find operations
 void		add_index(t_struct **stackA);

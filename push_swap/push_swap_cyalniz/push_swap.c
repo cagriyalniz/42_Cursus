@@ -6,19 +6,19 @@
 /*   By: cyalniz <cyalniz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 13:03:40 by cyalniz           #+#    #+#             */
-/*   Updated: 2022/06/28 17:07:36 by cyalniz          ###   ########.fr       */
+/*   Updated: 2022/06/29 16:18:00 by cyalniz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-void	ft_smallSort(t_struct **stackA, t_struct **stackB, int ac)
+void	ft_small_sort(t_struct **stackA, t_struct **stackB, int ac)
 {
 	(void)stackB;
 	if (ac == 2)
 	{
 		if ((*stackA)->value > (*stackA)->next->value)
-			ft_swap_a(stackA);    
+			ft_swap_a(stackA);
 	}
 	else if (ac == 3)
 		ft_sort_three(stackA);
@@ -48,13 +48,13 @@ static int	get_max_bits(t_struct *stack)
 	return (max_bits);
 }
 
-void	ft_radixSort(t_struct **stackA, t_struct **stackB)
+void	ft_radix_sort(t_struct **stackA, t_struct **stackB)
 {
 	t_struct	*tmp;
-	int		i;
-	int		j;
-	int		size;
-	int		max_bits;
+	int			i;
+	int			j;
+	int			size;
+	int			max_bits;
 
 	i = 0;
 	tmp = *stackA;
@@ -80,8 +80,7 @@ void	ft_radixSort(t_struct **stackA, t_struct **stackB)
 void	ft_main_sort(t_struct **stackA, t_struct **stackB, int ac)
 {
 	if (ac <= 5)
-		ft_smallSort(stackA, stackB, ac);
+		ft_small_sort(stackA, stackB, ac);
 	else
-		ft_radixSort(stackA, stackB);
+		ft_radix_sort(stackA, stackB);
 }
-
