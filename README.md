@@ -7,8 +7,10 @@ Ecole 42 yazılım okulunda yaptığım projeler:
  
  get_next_line: C programlama dili kullanarak bir metin dosyasındaki yazıları satır satır okuma işlemi yapan programı yazdım.
  
- ft_printf: C programlama dilinde bulunan "printf" fonksiyonun birçok özelliğini taklit eden fonksiyonu yazdım.
+ ft_printf: C programlama dilinde bulunan "printf" fonksiyonunun birçok özelliğini taklit eden fonksiyonu yazdım.
  
  miniTalk: Bir terminalden başka bir terminale sinyal gönderen programı yazdım.
  
  slong: C programlama dilinde 2 boyutlu bir oyun yazdım. 
+
+push_swap: Belirli kurallar çerçevesinda sayıları küçükten büyüğe en az hamlede sıralan program yazdım.
