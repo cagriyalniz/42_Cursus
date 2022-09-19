@@ -14,3 +14,5 @@ Ecole 42 yazılım okulunda yaptığım projeler:
  slong: C programlama dilinde 2 boyutlu bir oyun yazdım. 
 
 push_swap: Belirli kurallar çerçevesinda sayıları küçükten büyüğe en az hamlede sıralan program yazdım.
+
+philosophers: Philosophers dining problemine c dilinde çözüm ürettim.
